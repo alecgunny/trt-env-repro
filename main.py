@@ -1,4 +1,5 @@
 import logging
+import platform
 import sys
 from contextlib import ExitStack
 from io import BytesIO
@@ -20,8 +21,8 @@ logging.basicConfig(
 )
 
 logging.debug("TensorRT version: " + trt_version)
-logging.debug("System info: " + sys.platform)
-
+logging.debug("Python version: " + sys.version)
+logging.debug("Platform: " + platform.platform())
 
 class TRTLogger(trt.ILogger):
     def __init__(self):
