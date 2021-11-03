@@ -1,0 +1,796 @@
+[TensorRT] VERBOSE: Registered plugin creator - ::BatchTilePlugin_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::BatchedNMS_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::BatchedNMSDynamic_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::CoordConvAC version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::CropAndResize version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::DetectionLayer_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::FlattenConcat_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::GenerateDetection_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::GridAnchor_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::GridAnchorRect_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::InstanceNormalization_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::LReLU_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::MultilevelCropAndResize_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::MultilevelProposeROI_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::NMS_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::Normalize_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::PriorBox_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::ProposalLayer_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::Proposal version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::PyramidROIAlign_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::Region_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::Reorg_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::ResizeNearest_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::RPROI_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::SpecialSlice_TRT version 1
+[TensorRT] VERBOSE: Registered plugin creator - ::Split version 1
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:206: Adding network input: x with dtype: float32, dimensions: (8, 2, 100)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: x for ONNX tensor: x
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: encoder.0.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: encoder.0.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: encoder.2.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: encoder.2.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: encoder.4.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: encoder.4.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: decoder.0.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: decoder.0.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: decoder.2.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: decoder.2.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: decoder.4.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:90: Importing initializer: decoder.4.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: Conv_0 [Conv]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: x
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: encoder.0.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: encoder.0.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: Conv_0 [Conv] inputs: [x -> (8, 2, 100)], [encoder.0.weight -> (32, 2, 7)], [encoder.0.bias -> (32)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:450: Convolution input dimensions: (8, 2, 100)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1815: Original shape: (8, 2, 100), unsqueezing to: (8, 2, 100, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: Conv_0 for ONNX node: Conv_0
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1663: Original shape: (8, 32, 50, 1), squeezing to: (8, 32, 50)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:539: Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 32
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:540: Convolution output dimensions: (8, 32, 50, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 13 for ONNX tensor: 13
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: Conv_0 [Conv] outputs: [13 -> (8, 32, 50)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: Relu_1 [Relu]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 13
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: Relu_1 [Relu] inputs: [13 -> (8, 32, 50)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: Relu_1 for ONNX node: Relu_1
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 14 for ONNX tensor: 14
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: Relu_1 [Relu] outputs: [14 -> (8, 32, 50)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: Conv_2 [Conv]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 14
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: encoder.2.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: encoder.2.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: Conv_2 [Conv] inputs: [14 -> (8, 32, 50)], [encoder.2.weight -> (16, 32, 7)], [encoder.2.bias -> (16)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:450: Convolution input dimensions: (8, 32, 50)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1815: Original shape: (8, 32, 50), unsqueezing to: (8, 32, 50, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: Conv_2 for ONNX node: Conv_2
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1663: Original shape: (8, 16, 25, 1), squeezing to: (8, 16, 25)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:539: Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 16
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:540: Convolution output dimensions: (8, 16, 25, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 15 for ONNX tensor: 15
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: Conv_2 [Conv] outputs: [15 -> (8, 16, 25)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: Relu_3 [Relu]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 15
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: Relu_3 [Relu] inputs: [15 -> (8, 16, 25)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: Relu_3 for ONNX node: Relu_3
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 16 for ONNX tensor: 16
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: Relu_3 [Relu] outputs: [16 -> (8, 16, 25)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: Conv_4 [Conv]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 16
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: encoder.4.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: encoder.4.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: Conv_4 [Conv] inputs: [16 -> (8, 16, 25)], [encoder.4.weight -> (8, 16, 7)], [encoder.4.bias -> (8)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:450: Convolution input dimensions: (8, 16, 25)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1815: Original shape: (8, 16, 25), unsqueezing to: (8, 16, 25, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: Conv_4 for ONNX node: Conv_4
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1663: Original shape: (8, 8, 13, 1), squeezing to: (8, 8, 13)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:539: Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 8
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:540: Convolution output dimensions: (8, 8, 13, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 17 for ONNX tensor: 17
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: Conv_4 [Conv] outputs: [17 -> (8, 8, 13)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: Relu_5 [Relu]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 17
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: Relu_5 [Relu] inputs: [17 -> (8, 8, 13)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: Relu_5 for ONNX node: Relu_5
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 18 for ONNX tensor: 18
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: Relu_5 [Relu] outputs: [18 -> (8, 8, 13)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: ConvTranspose_6 [ConvTranspose]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 18
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: decoder.0.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: decoder.0.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: ConvTranspose_6 [ConvTranspose] inputs: [18 -> (8, 8, 13)], [decoder.0.weight -> (8, 16, 7)], [decoder.0.bias -> (16)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1815: Original shape: (8, 8, 13), unsqueezing to: (8, 8, 13, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:703: Running deconvolution with: 
+Padding mode: NOTSET
+Pre-padding: (3, 0)
+Post-padding: (3, 0)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: ConvTranspose_6 for ONNX node: ConvTranspose_6
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1663: Original shape: (8, 16, 25, 1), squeezing to: (8, 16, 25)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 19 for ONNX tensor: 19
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: ConvTranspose_6 [ConvTranspose] outputs: [19 -> (8, 16, 25)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: Relu_7 [Relu]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 19
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: Relu_7 [Relu] inputs: [19 -> (8, 16, 25)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: Relu_7 for ONNX node: Relu_7
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 20 for ONNX tensor: 20
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: Relu_7 [Relu] outputs: [20 -> (8, 16, 25)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: ConvTranspose_8 [ConvTranspose]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 20
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: decoder.2.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: decoder.2.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: ConvTranspose_8 [ConvTranspose] inputs: [20 -> (8, 16, 25)], [decoder.2.weight -> (16, 32, 7)], [decoder.2.bias -> (32)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1815: Original shape: (8, 16, 25), unsqueezing to: (8, 16, 25, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:703: Running deconvolution with: 
+Padding mode: NOTSET
+Pre-padding: (3, 0)
+Post-padding: (2, 0)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: ConvTranspose_8 for ONNX node: ConvTranspose_8
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1663: Original shape: (8, 32, 50, 1), squeezing to: (8, 32, 50)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 21 for ONNX tensor: 21
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: ConvTranspose_8 [ConvTranspose] outputs: [21 -> (8, 32, 50)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: Relu_9 [Relu]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 21
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: Relu_9 [Relu] inputs: [21 -> (8, 32, 50)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: Relu_9 for ONNX node: Relu_9
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: 22 for ONNX tensor: 22
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: Relu_9 [Relu] outputs: [22 -> (8, 32, 50)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:107: Parsing node: ConvTranspose_10 [ConvTranspose]
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: 22
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: decoder.4.weight
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:123: Searching for input: decoder.4.bias
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:129: ConvTranspose_10 [ConvTranspose] inputs: [22 -> (8, 32, 50)], [decoder.4.weight -> (32, 2, 7)], [decoder.4.bias -> (2)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1815: Original shape: (8, 32, 50), unsqueezing to: (8, 32, 50, 1)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/builtin_op_importers.cpp:703: Running deconvolution with: 
+Padding mode: NOTSET
+Pre-padding: (3, 0)
+Post-padding: (2, 0)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:154: Registering layer: ConvTranspose_10 for ONNX node: ConvTranspose_10
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/onnx2trt_utils.cpp:1663: Original shape: (8, 2, 100, 1), squeezing to: (8, 2, 100)
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ImporterContext.hpp:120: Registering tensor: y_0 for ONNX tensor: y
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:183: ConvTranspose_10 [ConvTranspose] outputs: [y -> (8, 2, 100)], 
+[TensorRT] VERBOSE: /home/jenkins/workspace/OSS/L0_MergeRequest/oss/parsers/onnx/ModelImporter.cpp:538: Marking y_0 as output: y
+[TensorRT] VERBOSE: Applying generic optimizations to the graph for inference.
+[TensorRT] VERBOSE: Original: 23 layers
+[TensorRT] VERBOSE: After dead-layer removal: 23 layers
+[TensorRT] VERBOSE: After Myelin optimization: 23 layers
+[TensorRT] VERBOSE: After scale fusion: 23 layers
+[TensorRT] VERBOSE: -----------SqueezePushDown kSQUEEZE_FORK case: Conv_0 --> (Unnamed Layer* 2) [Shuffle] --> Relu_1
+[TensorRT] VERBOSE: -----------SqueezePushDown kSQUEEZE_FORK case: Conv_2 --> (Unnamed Layer* 6) [Shuffle] --> Relu_3
+[TensorRT] VERBOSE: -----------SqueezePushDown kSQUEEZE_FORK case: Conv_4 --> (Unnamed Layer* 10) [Shuffle] --> Relu_5
+[TensorRT] VERBOSE: -----------SqueezePushDown kSQUEEZE_FORK case: ConvTranspose_6 --> (Unnamed Layer* 14) [Shuffle] --> Relu_7
+[TensorRT] VERBOSE: -----------SqueezePushDown kSQUEEZE_FORK case: ConvTranspose_8 --> (Unnamed Layer* 18) [Shuffle] --> Relu_9
+[TensorRT] VERBOSE: BinaryFusion: Fusing squeeze_after_Relu_1 with (Unnamed Layer* 4) [Shuffle]
+[TensorRT] VERBOSE: BinaryFusion: Fusing squeeze_after_Relu_3 with (Unnamed Layer* 8) [Shuffle]
+[TensorRT] VERBOSE: BinaryFusion: Fusing squeeze_after_Relu_5 with (Unnamed Layer* 12) [Shuffle]
+[TensorRT] VERBOSE: BinaryFusion: Fusing squeeze_after_Relu_7 with (Unnamed Layer* 16) [Shuffle]
+[TensorRT] VERBOSE: BinaryFusion: Fusing squeeze_after_Relu_9 with (Unnamed Layer* 20) [Shuffle]
+[TensorRT] VERBOSE: BinaryFusion: Fusing Conv_0 with Relu_1
+[TensorRT] VERBOSE: Removing squeeze_after_Relu_1 + (Unnamed Layer* 4) [Shuffle]
+[TensorRT] VERBOSE: BinaryFusion: Fusing Conv_2 with Relu_3
+[TensorRT] VERBOSE: Removing squeeze_after_Relu_3 + (Unnamed Layer* 8) [Shuffle]
+[TensorRT] VERBOSE: BinaryFusion: Fusing Conv_4 with Relu_5
+[TensorRT] VERBOSE: Removing squeeze_after_Relu_5 + (Unnamed Layer* 12) [Shuffle]
+[TensorRT] VERBOSE: Removing squeeze_after_Relu_7 + (Unnamed Layer* 16) [Shuffle]
+[TensorRT] VERBOSE: Removing squeeze_after_Relu_9 + (Unnamed Layer* 20) [Shuffle]
+[TensorRT] VERBOSE: Insert shuffle_before_(Unnamed Layer* 0) [Shuffle]_output and shuffle_after_Relu_1_out_tensorshuffle nodes around Conv_0 + Relu_1 to transpose convolution node.
+[TensorRT] VERBOSE: Insert shuffle_before_Relu_1_out_tensor and shuffle_after_Relu_3_out_tensorshuffle nodes around Conv_2 + Relu_3 to transpose convolution node.
+[TensorRT] VERBOSE: Insert shuffle_before_Relu_3_out_tensor and shuffle_after_Relu_5_out_tensorshuffle nodes around Conv_4 + Relu_5 to transpose convolution node.
+[TensorRT] VERBOSE: After vertical fusions: 16 layers
+[TensorRT] VERBOSE: After dupe layer removal: 16 layers
+[TensorRT] VERBOSE: After final dead-layer removal: 16 layers
+[TensorRT] VERBOSE: After tensor merging: 16 layers
+[TensorRT] VERBOSE: After concat removal: 16 layers
+[TensorRT] VERBOSE: Graph construction and optimization completed in 0.022435 seconds.
+[TensorRT] VERBOSE: Constructing optimization profile number 0 [1/1].
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,100,200) -> Float(1,1,100,200) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: (Unnamed Layer* 0) [Shuffle] (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.01024
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.007168
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.007168
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,100,200) -> Float(1,100,100,200) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_(Unnamed Layer* 0) [Shuffle]_output (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.011264
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(2,2,1,200) -> Float(2,200,1,200) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_(Unnamed Layer* 0) [Shuffle]_output (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.011264
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,100:32,100) -> Float(1,100,100:32,100) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_(Unnamed Layer* 0) [Shuffle]_output (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Tactic: 1 time 0.014336
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,100,100,200) -> Float(1,50,50,1600) ***************
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_small_nn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_0 + Relu_1 (CaskConvolution)
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: 1825138533642645384 time 0.016384
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: 3915320020053085238 time 0.01536
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: 6808617066150061604 time 0.014336
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: -8060443123034038864 time 0.014336
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: -4420849921117327522 time 0.011264
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: -3946921629105938337 time 0.014336
+[TensorRT] VERBOSE: Fastest Tactic: -4420849921117327522 Time: 0.011264
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_0 + Relu_1 (CudaConvolution)
+[TensorRT] VERBOSE: Tactic: 0 time 0.014336
+[TensorRT] VERBOSE: Tactic: 1 time 0.014336
+[TensorRT] VERBOSE: Tactic: 2 time 0.014336
+[TensorRT] VERBOSE: Tactic: 56 time 0.014336
+[TensorRT] VERBOSE: Tactic: 57 time 0.014336
+[TensorRT] VERBOSE: Tactic: 58 time 0.014336
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.014336
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_0 + Relu_1 (CudaDepthwiseConvolution)
+[TensorRT] VERBOSE: CudaDepthwiseConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_0 + Relu_1 (CublasConvolution)
+[TensorRT] VERBOSE: CublasConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: CaskConvolution Tactic: -4420849921117327522
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(2,200,1,200) -> Float(32,1600,1,1600) ***************
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_0 + Relu_1 (CaskConvolution)
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 861694390046228376 time 0.022528
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 5821621277990374316 time 0.022528
+[TensorRT] VERBOSE: Fastest Tactic: 861694390046228376 Time: 0.022528
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_0 + Relu_1 (CudaConvolution)
+[TensorRT] VERBOSE: CudaConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_0 + Relu_1 (CudaDepthwiseConvolution)
+[TensorRT] VERBOSE: CudaDepthwiseConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_0 + Relu_1 (CublasConvolution)
+[TensorRT] VERBOSE: CublasConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: CaskConvolution Tactic: 861694390046228376
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,50,50,1600) -> Float(1,1,50,1600) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_1_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.011264
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(32,1600,1,1600) -> Float(32,32,1,1600) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_1_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Tactic: 1 time 0.012288
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,50,50:32,50) -> Float(1,1,50:32,50) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_1_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.016384
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,50,1600) -> Float(1,50,50,1600) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_Relu_1_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.011264
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(32,32,1,1600) -> Float(32,1600,1,1600) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_Relu_1_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.012288
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,50:32,50) -> Float(1,50,50:32,50) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_Relu_1_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.01536
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,50,50,1600) -> Float(1,25,25,400) ***************
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_small_nn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_2 + Relu_3 (CaskConvolution)
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: 1825138533642645384 time 0.058368
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: 3915320020053085238 time 0.05632
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: 6808617066150061604 time 0.036864
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: -8060443123034038864 time 0.043008
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: -4420849921117327522 time 0.034816
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: -3946921629105938337 time 0.041984
+[TensorRT] VERBOSE: Fastest Tactic: -4420849921117327522 Time: 0.034816
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_2 + Relu_3 (CudaConvolution)
+[TensorRT] VERBOSE: Tactic: 0 time 0.0256
+[TensorRT] VERBOSE: Tactic: 1 time 0.0256
+[TensorRT] VERBOSE: Tactic: 2 time 0.053248
+[TensorRT] VERBOSE: Tactic: 56 time 0.0256
+[TensorRT] VERBOSE: Tactic: 57 time 0.0256
+[TensorRT] VERBOSE: Tactic: 58 time 0.053248
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.0256
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_2 + Relu_3 (CudaDepthwiseConvolution)
+[TensorRT] VERBOSE: CudaDepthwiseConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_2 + Relu_3 (CublasConvolution)
+[TensorRT] VERBOSE: CublasConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: CudaConvolution Tactic: 0
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(32,1600,1,1600) -> Float(16,400,1,400) ***************
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_2 + Relu_3 (CaskConvolution)
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 861694390046228376 time 0.05632
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 5258189349241541167 time 0.033792
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 5821621277990374316 time 0.055296
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 5863767799113001648 time 0.022528
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: -9147980667639709536 time 0.055296
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: -8850904373104590857 time 0.033792
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: -7751035352149795660 time 0.055296
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: -423878181466897819 time 0.022528
+[TensorRT] VERBOSE: Fastest Tactic: 5863767799113001648 Time: 0.022528
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_2 + Relu_3 (CudaConvolution)
+[TensorRT] VERBOSE: CudaConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_2 + Relu_3 (CudaDepthwiseConvolution)
+[TensorRT] VERBOSE: CudaDepthwiseConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_2 + Relu_3 (CublasConvolution)
+[TensorRT] VERBOSE: CublasConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: CaskConvolution Tactic: 5863767799113001648
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_2 + Relu_3 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,25,25,400) -> Float(1,1,25,400) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_3_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.011264
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(16,400,1,400) -> Float(16,16,1,400) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_3_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.012288
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,25,25:32,25) -> Float(1,1,25:32,25) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_3_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Tactic: 1 time 0.01536
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.01024
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,25,400) -> Float(1,25,25,400) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_Relu_3_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.011264
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(16,16,1,400) -> Float(16,400,1,400) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_Relu_3_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.012288
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,25:32,25) -> Float(1,25,25:32,25) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_before_Relu_3_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.007168
+[TensorRT] VERBOSE: Tactic: 1 time 0.01536
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.007168
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,25,25,400) -> Float(1,13,13,104) ***************
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_small_nn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_small_nn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_4 + Relu_5 (CaskConvolution)
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: 1825138533642645384 time 0.03584
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: 3915320020053085238 time 0.034816
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: 6808617066150061604 time 0.024576
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: -8060443123034038864 time 0.028672
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: Tactic: -4420849921117327522 time 0.022528
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_small_nn_v1
+[TensorRT] VERBOSE: Tactic: -3946921629105938337 time 0.026624
+[TensorRT] VERBOSE: Fastest Tactic: -4420849921117327522 Time: 0.022528
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_4 + Relu_5 (CudaConvolution)
+[TensorRT] VERBOSE: Tactic: 0 time 0.019456
+[TensorRT] VERBOSE: Tactic: 1 time 0.019456
+[TensorRT] VERBOSE: Tactic: 2 time 0.028672
+[TensorRT] VERBOSE: Tactic: 56 time 0.019456
+[TensorRT] VERBOSE: Tactic: 57 time 0.019456
+[TensorRT] VERBOSE: Tactic: 58 time 0.028672
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.019456
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_4 + Relu_5 (CudaDepthwiseConvolution)
+[TensorRT] VERBOSE: CudaDepthwiseConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_4 + Relu_5 (CublasConvolution)
+[TensorRT] VERBOSE: CublasConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: CudaConvolution Tactic: 0
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(16,400,1,400) -> Float(8,104,1,104) ***************
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_4 + Relu_5 (CaskConvolution)
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 861694390046228376 time 0.033792
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 5258189349241541167 time 0.021504
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 5821621277990374316 time 0.032768
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: 5863767799113001648 time 0.022528
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: -9147980667639709536 time 0.033792
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: -8850904373104590857 time 0.022528
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: -7751035352149795660 time 0.032768
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Tactic: -423878181466897819 time 0.022528
+[TensorRT] VERBOSE: Fastest Tactic: 5258189349241541167 Time: 0.021504
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_4 + Relu_5 (CudaConvolution)
+[TensorRT] VERBOSE: CudaConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_4 + Relu_5 (CudaDepthwiseConvolution)
+[TensorRT] VERBOSE: CudaDepthwiseConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: Conv_4 + Relu_5 (CublasConvolution)
+[TensorRT] VERBOSE: CublasConvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: CaskConvolution Tactic: 5258189349241541167
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x128_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x32_sliced1x4_ldg4_relu_exp_medium_nhwc_tn_v1
+[TensorRT] VERBOSE: Conv_4 + Relu_5 (scudnn) Set Tactic Name: volta_scudnn_128x64_sliced1x2_ldg4_relu_exp_small_nhwc_tn_v1
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.007168
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.007168
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.009216
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,13,13,104) -> Float(1,1,13,104) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_5_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.01024
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(8,104,1,104) -> Float(8,8,1,104) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_5_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.01024
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,13,13:32,13) -> Float(1,1,13:32,13) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: shuffle_after_Relu_5_out_tensor (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.013312
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.007168
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.007168
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: --------------- Timing Runner: <reformat> (Reformat)
+[TensorRT] VERBOSE: Tactic: 1002 time 0.008192
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,13,104) -> Float(1,1,25,400) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_6 (CudnnDeconvolution)
+[TensorRT] VERBOSE: Tactic: 0 time 0.03584
+[TensorRT] VERBOSE: Tactic: 1 time 0.034816
+[TensorRT] VERBOSE: Fastest Tactic: 1 Time: 0.034816
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_6 (CaskDeconvolution)
+[TensorRT] VERBOSE: CaskDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_6 (GemmDeconvolution)
+[TensorRT] VERBOSE: Tactic: 0 time 0.014336
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.014336
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: GemmDeconvolution Tactic: 0
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(8,8,1,104) -> Float(16,16,1,400) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_6 (CudnnDeconvolution)
+[TensorRT] VERBOSE: CudnnDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_6 (CaskDeconvolution)
+[TensorRT] VERBOSE: CaskDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_6 (GemmDeconvolution)
+[TensorRT] VERBOSE: GemmDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,25,400) -> Float(1,1,25,400) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: Relu_7 (Activation)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(16,16,1,400) -> Float(16,16,1,400) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: Relu_7 (Activation)
+[TensorRT] VERBOSE: Activation has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,25,400) -> Float(1,1,50,1600) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_8 (CudnnDeconvolution)
+[TensorRT] VERBOSE: CudnnDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_8 (CaskDeconvolution)
+[TensorRT] VERBOSE: CaskDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_8 (GemmDeconvolution)
+[TensorRT] VERBOSE: Tactic: 0 time 0.01536
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.01536
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: GemmDeconvolution Tactic: 0
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(16,16,1,400) -> Float(32,32,1,1600) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_8 (CudnnDeconvolution)
+[TensorRT] VERBOSE: CudnnDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_8 (CaskDeconvolution)
+[TensorRT] VERBOSE: CaskDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_8 (GemmDeconvolution)
+[TensorRT] VERBOSE: GemmDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,50,1600) -> Float(1,1,50,1600) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: Relu_9 (Activation)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(32,32,1,1600) -> Float(32,32,1,1600) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: Relu_9 (Activation)
+[TensorRT] VERBOSE: Activation has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,50,1600) -> Float(1,1,100,200) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_10 (CudnnDeconvolution)
+[TensorRT] VERBOSE: CudnnDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_10 (CaskDeconvolution)
+[TensorRT] VERBOSE: CaskDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_10 (GemmDeconvolution)
+[TensorRT] VERBOSE: Tactic: 0 time 0.016384
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.016384
+[TensorRT] VERBOSE: >>>>>>>>>>>>>>> Chose Runner Type: GemmDeconvolution Tactic: 0
+[TensorRT] VERBOSE: 
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(32,32,1,1600) -> Float(2,2,1,200) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_10 (CudnnDeconvolution)
+[TensorRT] VERBOSE: CudnnDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_10 (CaskDeconvolution)
+[TensorRT] VERBOSE: CaskDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: --------------- Timing Runner: ConvTranspose_10 (GemmDeconvolution)
+[TensorRT] VERBOSE: GemmDeconvolution has no valid tactics for this config, skipping
+[TensorRT] VERBOSE: *************** Autotuning format combination: Float(1,1,100,200) -> Float(1,100,200) ***************
+[TensorRT] VERBOSE: --------------- Timing Runner: (Unnamed Layer* 22) [Shuffle] (Shuffle)
+[TensorRT] VERBOSE: Tactic: 0 time 0.006144
+[TensorRT] VERBOSE: Tactic: 1 time 0.01024
+[TensorRT] VERBOSE: Fastest Tactic: 0 Time: 0.006144
+[TensorRT] VERBOSE: Formats and tactics selection completed in 12.2978 seconds.
+[TensorRT] VERBOSE: After reformat layers: 16 layers
+[TensorRT] VERBOSE: Block size 1048576
+[TensorRT] VERBOSE: Block size 51200
+[TensorRT] VERBOSE: Block size 51200
+[TensorRT] VERBOSE: Block size 3584
+[TensorRT] VERBOSE: Block size 1
+[TensorRT] VERBOSE: Block size 1
+[TensorRT] VERBOSE: Total Activation Memory: 1154562
+[TensorRT] INFO: Detected 1 inputs and 1 output network tensors.
+[TensorRT] VERBOSE: Conv_0 + Relu_1 (scudnn) Set Tactic Name: volta_scudnn_128x32_relu_medium_nn_v1
+[TensorRT] VERBOSE: Layer: Conv_0 + Relu_1 Weights: 0 HostPersistent: 2176 DevicePersistent: 2560
+[TensorRT] VERBOSE: Layer: Conv_2 + Relu_3 Weights: 14336 HostPersistent: 8 DevicePersistent: 0
+[TensorRT] VERBOSE: Layer: Conv_4 + Relu_5 Weights: 3584 HostPersistent: 8 DevicePersistent: 0
+[TensorRT] VERBOSE: Layer: ConvTranspose_6 Weights: 3584 HostPersistent: 0 DevicePersistent: 0
+[TensorRT] VERBOSE: Layer: Relu_7 Weights: 0 HostPersistent: 0 DevicePersistent: 0
+[TensorRT] VERBOSE: Layer: ConvTranspose_8 Weights: 14336 HostPersistent: 0 DevicePersistent: 0
+[TensorRT] VERBOSE: Layer: Relu_9 Weights: 0 HostPersistent: 0 DevicePersistent: 0
+[TensorRT] VERBOSE: Layer: ConvTranspose_10 Weights: 1792 HostPersistent: 0 DevicePersistent: 0
+[TensorRT] VERBOSE: Total Host Persistent Memory: 2192
+[TensorRT] VERBOSE: Total Device Persistent Memory: 2560
+[TensorRT] VERBOSE: Total Weight Memory: 37632
+[TensorRT] VERBOSE: Engine generation completed in 20.1798 seconds.
+[TensorRT] VERBOSE: Builder timing cache: created 52 entries, 17 hit(s)
+[TensorRT] VERBOSE: Engine Layer Information:
+[TensorRT] VERBOSE: Layer(scudnn): Conv_0 + Relu_1, Tactic: -4420849921117327522, shuffle_before_(Unnamed Layer* 0) [Shuffle]_output_out_region[Float(2,1,100)] -> Conv_0 + Relu_1_new_out_region[Float(32,1,50)]
+[TensorRT] VERBOSE: Layer(Convolution): Conv_2 + Relu_3, Tactic: 0, shuffle_before_Relu_1_out_tensor_out_region[Float(32,1,50)] -> Conv_2 + Relu_3_new_out_region[Float(16,1,25)]
+[TensorRT] VERBOSE: Layer(Convolution): Conv_4 + Relu_5, Tactic: 0, shuffle_before_Relu_3_out_tensor_out_region[Float(16,1,25)] -> Conv_4 + Relu_5_new_out_region[Float(8,1,13)]
+[TensorRT] VERBOSE: Layer(gemmDeconvolution): ConvTranspose_6, Tactic: 0, Relu_5_out_tensor[Float(8,13,1)] -> (Unnamed Layer* 13) [Deconvolution]_output[Float(16,25,1)]
+[TensorRT] VERBOSE: Layer(Activation): Relu_7, Tactic: 0, (Unnamed Layer* 13) [Deconvolution]_output[Float(16,25,1)] -> Relu_7_out_tensor[Float(16,25,1)]
+[TensorRT] VERBOSE: Layer(gemmDeconvolution): ConvTranspose_8, Tactic: 0, Relu_7_out_tensor[Float(16,25,1)] -> (Unnamed Layer* 17) [Deconvolution]_output[Float(32,50,1)]
+[TensorRT] VERBOSE: Layer(Activation): Relu_9, Tactic: 0, (Unnamed Layer* 17) [Deconvolution]_output[Float(32,50,1)] -> Relu_9_out_tensor[Float(32,50,1)]
+[TensorRT] VERBOSE: Layer(gemmDeconvolution): ConvTranspose_10, Tactic: 0, Relu_9_out_tensor[Float(32,50,1)] -> (Unnamed Layer* 21) [Deconvolution]_output[Float(2,100,1)]
+[TensorRT] VERBOSE: Allocated persistent device memory of size 2560
+[TensorRT] VERBOSE: Allocated activation device memory of size 318976
+[TensorRT] VERBOSE: Assigning persistent memory blocks for various profiles

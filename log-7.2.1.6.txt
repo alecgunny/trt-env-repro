@@ -1,0 +1,35 @@
+2021-11-03 15:37:33,634 - root - DEBUG - TensorRT version: 7.2.1.6
+2021-11-03 15:37:33,634 - root - DEBUG - Python version: 3.6.9 (default, Oct  8 2020, 12:12:24) 
+[GCC 8.4.0]
+2021-11-03 15:37:33,636 - root - DEBUG - Platform: Linux-3.10.0-1160.45.1.el7.x86_64-x86_64-with-Ubuntu-18.04-bionic
+2021-11-03 15:38:00,167 - root - INFO - Exporting NN to ONNX
+2021-11-03 15:38:00,259 - stdout - DEBUG - graph(%x : Float(8, 2, 100, strides=[200, 100, 1], requires_grad=0, device=cuda:0),
+      %encoder.0.weight : Float(32, 2, 7, strides=[14, 7, 1], requires_grad=1, device=cuda:0),
+      %encoder.0.bias : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %encoder.2.weight : Float(16, 32, 7, strides=[224, 7, 1], requires_grad=1, device=cuda:0),
+      %encoder.2.bias : Float(16, strides=[1], requires_grad=1, device=cuda:0),
+      %encoder.4.weight : Float(8, 16, 7, strides=[112, 7, 1], requires_grad=1, device=cuda:0),
+      %encoder.4.bias : Float(8, strides=[1], requires_grad=1, device=cuda:0),
+      %decoder.0.weight : Float(8, 16, 7, strides=[112, 7, 1], requires_grad=1, device=cuda:0),
+      %decoder.0.bias : Float(16, strides=[1], requires_grad=1, device=cuda:0),
+      %decoder.2.weight : Float(16, 32, 7, strides=[224, 7, 1], requires_grad=1, device=cuda:0),
+      %decoder.2.bias : Float(32, strides=[1], requires_grad=1, device=cuda:0),
+      %decoder.4.weight : Float(32, 2, 7, strides=[14, 7, 1], requires_grad=1, device=cuda:0),
+      %decoder.4.bias : Float(2, strides=[1], requires_grad=1, device=cuda:0)):
+  %13 : Float(8, 32, 50, strides=[1600, 50, 1], requires_grad=1, device=cuda:0) = onnx::Conv[dilations=[1], group=1, kernel_shape=[7], pads=[3, 3], strides=[2]](%x, %encoder.0.weight, %encoder.0.bias) # /usr/local/lib/python3.6/dist-packages/torch/nn/modules/conv.py:260:0
+  %14 : Float(8, 32, 50, strides=[1600, 50, 1], requires_grad=1, device=cuda:0) = onnx::Relu(%13) # /usr/local/lib/python3.6/dist-packages/torch/nn/functional.py:1206:0
+  %15 : Float(8, 16, 25, strides=[400, 25, 1], requires_grad=1, device=cuda:0) = onnx::Conv[dilations=[1], group=1, kernel_shape=[7], pads=[3, 3], strides=[2]](%14, %encoder.2.weight, %encoder.2.bias) # /usr/local/lib/python3.6/dist-packages/torch/nn/modules/conv.py:260:0
+  %16 : Float(8, 16, 25, strides=[400, 25, 1], requires_grad=1, device=cuda:0) = onnx::Relu(%15) # /usr/local/lib/python3.6/dist-packages/torch/nn/functional.py:1206:0
+  %17 : Float(8, 8, 13, strides=[104, 13, 1], requires_grad=1, device=cuda:0) = onnx::Conv[dilations=[1], group=1, kernel_shape=[7], pads=[3, 3], strides=[2]](%16, %encoder.4.weight, %encoder.4.bias) # /usr/local/lib/python3.6/dist-packages/torch/nn/modules/conv.py:260:0
+  %18 : Float(8, 8, 13, strides=[104, 13, 1], requires_grad=1, device=cuda:0) = onnx::Relu(%17) # /usr/local/lib/python3.6/dist-packages/torch/nn/functional.py:1206:0
+  %19 : Float(8, 16, 25, strides=[400, 25, 1], requires_grad=1, device=cuda:0) = onnx::ConvTranspose[dilations=[1], group=1, kernel_shape=[7], pads=[3, 3], strides=[2]](%18, %decoder.0.weight, %decoder.0.bias) # /usr/local/lib/python3.6/dist-packages/torch/nn/modules/conv.py:697:0
+  %20 : Float(8, 16, 25, strides=[400, 25, 1], requires_grad=1, device=cuda:0) = onnx::Relu(%19) # /usr/local/lib/python3.6/dist-packages/torch/nn/functional.py:1206:0
+  %21 : Float(8, 32, 50, strides=[1600, 50, 1], requires_grad=1, device=cuda:0) = onnx::ConvTranspose[dilations=[1], group=1, kernel_shape=[7], output_padding=[1], pads=[3, 3], strides=[2]](%20, %decoder.2.weight, %decoder.2.bias) # /usr/local/lib/python3.6/dist-packages/torch/nn/modules/conv.py:697:0
+  %22 : Float(8, 32, 50, strides=[1600, 50, 1], requires_grad=1, device=cuda:0) = onnx::Relu(%21) # /usr/local/lib/python3.6/dist-packages/torch/nn/functional.py:1206:0
+  %y : Float(8, 2, 100, strides=[200, 100, 1], requires_grad=1, device=cuda:0) = onnx::ConvTranspose[dilations=[1], group=1, kernel_shape=[7], output_padding=[1], pads=[3, 3], strides=[2]](%22, %decoder.4.weight, %decoder.4.bias) # /usr/local/lib/python3.6/dist-packages/torch/nn/modules/conv.py:697:0
+  return (%y)
+
+2021-11-03 15:38:00,260 - root - INFO - Converting ONNX model to TensorRT
+2021-11-03 15:38:38,785 - root - INFO - Engine built, performing inference
+2021-11-03 15:38:38,789 - root - INFO - Executing inference using TensorRT engine
+2021-11-03 15:38:38,791 - root - INFO - Mean error 0.0000 +/- 0.0000

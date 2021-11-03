@@ -2,6 +2,7 @@ from contextlib import ExitStack
 from io import BytesIO
 from packaging.version import Version
 from typing import Tuple
+from wurlitzer import sys_pipes
 
 import pycuda.driver as cuda
 import numpy as np
@@ -86,7 +87,10 @@ def convert_to_trt(
 ) -> trt.ICudaEngine:
     """Convert an ONNX binary to a TensorRT executable engine"""
     logger.info("Converting ONNX model to TensorRT")
-    trt_logger = TRTLogger()
+    if IS_8_OR_HIGHER:
+        trt_logger = TRTLogger()
+    else:
+        trt_logger = trt.Logger(trt.Logger.VERBOSE)
 
     # use an exit stack to keep the number of tabs manageable
     with ExitStack() as stack:
@@ -197,28 +201,33 @@ def main(
     frame_length: int
 ) -> None:
     input_shape = (batch_size, num_channels, frame_length)
-
+    
     # build a dummy input then build a network
     # using it. Get a target output to compare
     # against TensorRT's output
     x = torch.randn(input_shape).cuda()
     onnx_binary, y = build_onnx_network(x)
-
+    
     # move these torch tensors to the numpy
     # on the CPU and flatten them for use
     # with TensorRT memory buffers
     x = x.detach().cpu().numpy().ravel()
     y = y.detach().cpu().numpy().ravel()
-
+    
     # build a TensorRT engine and do some inference
     # on our dummy input using it
     engine = convert_to_trt(onnx_binary, input_shape)
-    y_trt = do_inference(engine, x)
 
+    logger.info("Engine built, performing inference")
+    y_trt = do_inference(engine, x)
+    
     # make sure that TensorRT's answer is pretty
     # close to Torch's answer
-    err = np.abs(y_trt - y)
-    assert np.isclose(err, 0, atol=1e-9).all()
+    err = np.abs(y_trt - y) / y
+    logger.info(
+        "Mean error {:0.4f} +/- {:0.4f}".format(err.mean(), err.std())
+    )
+    assert np.isclose(y_trt, y, rtol=1e-6).all()
 
 
 if __name__ == "__main__":
