@@ -1,9 +1,9 @@
-2021-11-03 13:59:57,248 - root - DEBUG - TensorRT version: 8.0.3.4
-2021-11-03 13:59:57,249 - root - DEBUG - Python version: 3.8.10 (default, Sep 28 2021, 16:10:42) 
+2021-11-03 14:38:28,589 - root - DEBUG - TensorRT version: 8.0.3.4
+2021-11-03 14:38:28,589 - root - DEBUG - Python version: 3.8.10 (default, Sep 28 2021, 16:10:42) 
 [GCC 9.3.0]
-2021-11-03 13:59:57,269 - root - DEBUG - Platform: Linux-3.10.0-1160.45.1.el7.x86_64-x86_64-with-glibc2.29
-2021-11-03 14:00:00,671 - root - INFO - Exporting NN to ONNX
-2021-11-03 14:00:00,806 - stdout - DEBUG - graph(%x : Float(8, 2, 100, strides=[200, 100, 1], requires_grad=0, device=cuda:0),
+2021-11-03 14:38:28,608 - root - DEBUG - Platform: Linux-3.10.0-1160.45.1.el7.x86_64-x86_64-with-glibc2.29
+2021-11-03 14:38:32,000 - root - INFO - Exporting NN to ONNX
+2021-11-03 14:38:32,136 - stdout - DEBUG - graph(%x : Float(8, 2, 100, strides=[200, 100, 1], requires_grad=0, device=cuda:0),
       %encoder.0.weight : Float(32, 2, 7, strides=[14, 7, 1], requires_grad=1, device=cuda:0),
       %encoder.0.bias : Float(32, strides=[1], requires_grad=1, device=cuda:0),
       %encoder.2.weight : Float(16, 32, 7, strides=[224, 7, 1], requires_grad=1, device=cuda:0),
@@ -29,142 +29,150 @@
   %y : Float(8, 2, 100, strides=[200, 100, 1], requires_grad=1, device=cuda:0) = onnx::ConvTranspose[dilations=[1], group=1, kernel_shape=[7], output_padding=[1], pads=[3, 3], strides=[2]](%22, %decoder.4.weight, %decoder.4.bias) # /usr/local/lib/python3.8/dist-packages/torch/nn/modules/conv.py:772:0
   return (%y)
 
-2021-11-03 14:00:00,807 - root - INFO - Converting ONNX model to TensorRT
-2021-11-03 14:00:01,273 - TensorRT - INFO - [MemUsageChange] Init CUDA: CPU +241, GPU +0, now: CPU 2639, GPU 1783 (MiB)
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::GridAnchor_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::GridAnchorRect_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::NMS_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::Reorg_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::Region_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::Clip_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::LReLU_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::PriorBox_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::Normalize_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::ScatterND version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::RPROI_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::BatchedNMS_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::BatchedNMSDynamic_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::FlattenConcat_TRT version 1
-2021-11-03 14:00:01,280 - TensorRT - DEBUG - Registered plugin creator - ::CropAndResize version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::DetectionLayer_TRT version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::EfficientNMS_ONNX_TRT version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::EfficientNMS_TRT version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::Proposal version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::ProposalLayer_TRT version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::PyramidROIAlign_TRT version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::ResizeNearest_TRT version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::Split version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::SpecialSlice_TRT version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registered plugin creator - ::InstanceNormalization_TRT version 1
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Adding network input: x with dtype: float32, dimensions: (8, 2, 100)
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Registering tensor: x for ONNX tensor: x
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Importing initializer: encoder.0.weight
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Importing initializer: encoder.0.bias
-2021-11-03 14:00:01,281 - TensorRT - DEBUG - Importing initializer: encoder.2.weight
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: encoder.2.bias
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: encoder.4.weight
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: encoder.4.bias
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: decoder.0.weight
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: decoder.0.bias
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: decoder.2.weight
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: decoder.2.bias
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: decoder.4.weight
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Importing initializer: decoder.4.bias
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Parsing node: Conv_0 [Conv]
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Searching for input: x
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Searching for input: encoder.0.weight
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Searching for input: encoder.0.bias
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Conv_0 [Conv] inputs: [x -> (8, 2, 100)[FLOAT]], [encoder.0.weight -> (32, 2, 7)[FLOAT]], [encoder.0.bias -> (32)[FLOAT]], 
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Convolution input dimensions: (8, 2, 100)
-2021-11-03 14:00:01,282 - TensorRT - DEBUG - Original shape: (8, 2, 100), unsqueezing to: (8, 2, 100, 1)
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Registering layer: Conv_0 for ONNX node: Conv_0
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Original shape: (8, 32, 50, 1), squeezing to: (8, 32, 50)
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 32
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Convolution output dimensions: (8, 32, 50, 1)
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Registering tensor: 13 for ONNX tensor: 13
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Conv_0 [Conv] outputs: [13 -> (8, 32, 50)[FLOAT]], 
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Parsing node: Relu_1 [Relu]
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Searching for input: 13
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Relu_1 [Relu] inputs: [13 -> (8, 32, 50)[FLOAT]], 
-2021-11-03 14:00:01,284 - TensorRT - DEBUG - Registering layer: Relu_1 for ONNX node: Relu_1
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Registering tensor: 14 for ONNX tensor: 14
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Relu_1 [Relu] outputs: [14 -> (8, 32, 50)[FLOAT]], 
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Parsing node: Conv_2 [Conv]
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Searching for input: 14
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Searching for input: encoder.2.weight
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Searching for input: encoder.2.bias
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Conv_2 [Conv] inputs: [14 -> (8, 32, 50)[FLOAT]], [encoder.2.weight -> (16, 32, 7)[FLOAT]], [encoder.2.bias -> (16)[FLOAT]], 
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Convolution input dimensions: (8, 32, 50)
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Original shape: (8, 32, 50), unsqueezing to: (8, 32, 50, 1)
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Registering layer: Conv_2 for ONNX node: Conv_2
-2021-11-03 14:00:01,285 - TensorRT - DEBUG - Original shape: (8, 16, 25, 1), squeezing to: (8, 16, 25)
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 16
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Convolution output dimensions: (8, 16, 25, 1)
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Registering tensor: 15 for ONNX tensor: 15
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Conv_2 [Conv] outputs: [15 -> (8, 16, 25)[FLOAT]], 
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Parsing node: Relu_3 [Relu]
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Searching for input: 15
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Relu_3 [Relu] inputs: [15 -> (8, 16, 25)[FLOAT]], 
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Registering layer: Relu_3 for ONNX node: Relu_3
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Registering tensor: 16 for ONNX tensor: 16
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Relu_3 [Relu] outputs: [16 -> (8, 16, 25)[FLOAT]], 
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Parsing node: Conv_4 [Conv]
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Searching for input: 16
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Searching for input: encoder.4.weight
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Searching for input: encoder.4.bias
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Conv_4 [Conv] inputs: [16 -> (8, 16, 25)[FLOAT]], [encoder.4.weight -> (8, 16, 7)[FLOAT]], [encoder.4.bias -> (8)[FLOAT]], 
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Convolution input dimensions: (8, 16, 25)
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Original shape: (8, 16, 25), unsqueezing to: (8, 16, 25, 1)
-2021-11-03 14:00:01,286 - TensorRT - DEBUG - Registering layer: Conv_4 for ONNX node: Conv_4
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Original shape: (8, 8, 13, 1), squeezing to: (8, 8, 13)
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 8
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Convolution output dimensions: (8, 8, 13, 1)
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Registering tensor: 17 for ONNX tensor: 17
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Conv_4 [Conv] outputs: [17 -> (8, 8, 13)[FLOAT]], 
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Parsing node: Relu_5 [Relu]
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Searching for input: 17
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Relu_5 [Relu] inputs: [17 -> (8, 8, 13)[FLOAT]], 
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Registering layer: Relu_5 for ONNX node: Relu_5
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Registering tensor: 18 for ONNX tensor: 18
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Relu_5 [Relu] outputs: [18 -> (8, 8, 13)[FLOAT]], 
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Parsing node: ConvTranspose_6 [ConvTranspose]
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Searching for input: 18
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Searching for input: decoder.0.weight
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Searching for input: decoder.0.bias
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - ConvTranspose_6 [ConvTranspose] inputs: [18 -> (8, 8, 13)[FLOAT]], [decoder.0.weight -> (8, 16, 7)[FLOAT]], [decoder.0.bias -> (16)[FLOAT]], 
-2021-11-03 14:00:01,287 - TensorRT - DEBUG - Original shape: (8, 8, 13), unsqueezing to: (8, 8, 13, 1)
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Running deconvolution with: 
+2021-11-03 14:38:32,137 - root - INFO - Converting ONNX model to TensorRT
+2021-11-03 14:38:32,607 - TensorRT - INFO - [MemUsageChange] Init CUDA: CPU +241, GPU +0, now: CPU 2639, GPU 1783 (MiB)
+2021-11-03 14:38:32,614 - TensorRT - DEBUG - Registered plugin creator - ::GridAnchor_TRT version 1
+2021-11-03 14:38:32,614 - TensorRT - DEBUG - Registered plugin creator - ::GridAnchorRect_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::NMS_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::Reorg_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::Region_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::Clip_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::LReLU_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::PriorBox_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::Normalize_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::ScatterND version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::RPROI_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::BatchedNMS_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::BatchedNMSDynamic_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::FlattenConcat_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::CropAndResize version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::DetectionLayer_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::EfficientNMS_ONNX_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::EfficientNMS_TRT version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::Proposal version 1
+2021-11-03 14:38:32,615 - TensorRT - DEBUG - Registered plugin creator - ::ProposalLayer_TRT version 1
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Registered plugin creator - ::PyramidROIAlign_TRT version 1
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Registered plugin creator - ::ResizeNearest_TRT version 1
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Registered plugin creator - ::Split version 1
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Registered plugin creator - ::SpecialSlice_TRT version 1
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Registered plugin creator - ::InstanceNormalization_TRT version 1
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Adding network input: x with dtype: float32, dimensions: (8, 2, 100)
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Registering tensor: x for ONNX tensor: x
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Importing initializer: encoder.0.weight
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Importing initializer: encoder.0.bias
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Importing initializer: encoder.2.weight
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Importing initializer: encoder.2.bias
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Importing initializer: encoder.4.weight
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Importing initializer: encoder.4.bias
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Importing initializer: decoder.0.weight
+2021-11-03 14:38:32,616 - TensorRT - DEBUG - Importing initializer: decoder.0.bias
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Importing initializer: decoder.2.weight
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Importing initializer: decoder.2.bias
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Importing initializer: decoder.4.weight
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Importing initializer: decoder.4.bias
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Parsing node: Conv_0 [Conv]
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Searching for input: x
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Searching for input: encoder.0.weight
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Searching for input: encoder.0.bias
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Conv_0 [Conv] inputs: [x -> (8, 2, 100)[FLOAT]], [encoder.0.weight -> (32, 2, 7)[FLOAT]], [encoder.0.bias -> (32)[FLOAT]], 
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Convolution input dimensions: (8, 2, 100)
+2021-11-03 14:38:32,617 - TensorRT - DEBUG - Original shape: (8, 2, 100), unsqueezing to: (8, 2, 100, 1)
+2021-11-03 14:38:32,618 - TensorRT - DEBUG - Registering layer: Conv_0 for ONNX node: Conv_0
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Original shape: (8, 32, 50, 1), squeezing to: (8, 32, 50)
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 32
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Convolution output dimensions: (8, 32, 50, 1)
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Registering tensor: 13 for ONNX tensor: 13
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Conv_0 [Conv] outputs: [13 -> (8, 32, 50)[FLOAT]], 
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Parsing node: Relu_1 [Relu]
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Searching for input: 13
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Relu_1 [Relu] inputs: [13 -> (8, 32, 50)[FLOAT]], 
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Registering layer: Relu_1 for ONNX node: Relu_1
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Registering tensor: 14 for ONNX tensor: 14
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Relu_1 [Relu] outputs: [14 -> (8, 32, 50)[FLOAT]], 
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Parsing node: Conv_2 [Conv]
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Searching for input: 14
+2021-11-03 14:38:32,619 - TensorRT - DEBUG - Searching for input: encoder.2.weight
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Searching for input: encoder.2.bias
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Conv_2 [Conv] inputs: [14 -> (8, 32, 50)[FLOAT]], [encoder.2.weight -> (16, 32, 7)[FLOAT]], [encoder.2.bias -> (16)[FLOAT]], 
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Convolution input dimensions: (8, 32, 50)
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Original shape: (8, 32, 50), unsqueezing to: (8, 32, 50, 1)
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Registering layer: Conv_2 for ONNX node: Conv_2
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Original shape: (8, 16, 25, 1), squeezing to: (8, 16, 25)
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 16
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Convolution output dimensions: (8, 16, 25, 1)
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Registering tensor: 15 for ONNX tensor: 15
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Conv_2 [Conv] outputs: [15 -> (8, 16, 25)[FLOAT]], 
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Parsing node: Relu_3 [Relu]
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Searching for input: 15
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Relu_3 [Relu] inputs: [15 -> (8, 16, 25)[FLOAT]], 
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Registering layer: Relu_3 for ONNX node: Relu_3
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Registering tensor: 16 for ONNX tensor: 16
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Relu_3 [Relu] outputs: [16 -> (8, 16, 25)[FLOAT]], 
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Parsing node: Conv_4 [Conv]
+2021-11-03 14:38:32,620 - TensorRT - DEBUG - Searching for input: 16
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Searching for input: encoder.4.weight
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Searching for input: encoder.4.bias
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Conv_4 [Conv] inputs: [16 -> (8, 16, 25)[FLOAT]], [encoder.4.weight -> (8, 16, 7)[FLOAT]], [encoder.4.bias -> (8)[FLOAT]], 
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Convolution input dimensions: (8, 16, 25)
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Original shape: (8, 16, 25), unsqueezing to: (8, 16, 25, 1)
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Registering layer: Conv_4 for ONNX node: Conv_4
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Original shape: (8, 8, 13, 1), squeezing to: (8, 8, 13)
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Using kernel: (7, 1), strides: (2, 1), prepadding: (3, 0), postpadding: (3, 0), dilations: (1, 1), numOutputs: 8
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Convolution output dimensions: (8, 8, 13, 1)
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Registering tensor: 17 for ONNX tensor: 17
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Conv_4 [Conv] outputs: [17 -> (8, 8, 13)[FLOAT]], 
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Parsing node: Relu_5 [Relu]
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Searching for input: 17
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Relu_5 [Relu] inputs: [17 -> (8, 8, 13)[FLOAT]], 
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Registering layer: Relu_5 for ONNX node: Relu_5
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Registering tensor: 18 for ONNX tensor: 18
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Relu_5 [Relu] outputs: [18 -> (8, 8, 13)[FLOAT]], 
+2021-11-03 14:38:32,621 - TensorRT - DEBUG - Parsing node: ConvTranspose_6 [ConvTranspose]
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Searching for input: 18
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Searching for input: decoder.0.weight
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Searching for input: decoder.0.bias
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - ConvTranspose_6 [ConvTranspose] inputs: [18 -> (8, 8, 13)[FLOAT]], [decoder.0.weight -> (8, 16, 7)[FLOAT]], [decoder.0.bias -> (16)[FLOAT]], 
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Original shape: (8, 8, 13), unsqueezing to: (8, 8, 13, 1)
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Running deconvolution with: 
 Padding mode: NOTSET
 Pre-padding: (3, 0)
 Post-padding: (3, 0)
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Registering layer: ConvTranspose_6 for ONNX node: ConvTranspose_6
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Original shape: (8, 16, 25, 1), squeezing to: (8, 16, 25)
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Registering tensor: 19 for ONNX tensor: 19
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - ConvTranspose_6 [ConvTranspose] outputs: [19 -> (8, 16, 25)[FLOAT]], 
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Parsing node: Relu_7 [Relu]
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Searching for input: 19
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Relu_7 [Relu] inputs: [19 -> (8, 16, 25)[FLOAT]], 
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Registering layer: Relu_7 for ONNX node: Relu_7
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Registering tensor: 20 for ONNX tensor: 20
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Relu_7 [Relu] outputs: [20 -> (8, 16, 25)[FLOAT]], 
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Parsing node: ConvTranspose_8 [ConvTranspose]
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Searching for input: 20
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Searching for input: decoder.2.weight
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Searching for input: decoder.2.bias
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - ConvTranspose_8 [ConvTranspose] inputs: [20 -> (8, 16, 25)[FLOAT]], [decoder.2.weight -> (16, 32, 7)[FLOAT]], [decoder.2.bias -> (32)[FLOAT]], 
-2021-11-03 14:00:01,288 - TensorRT - DEBUG - Original shape: (8, 16, 25), unsqueezing to: (8, 16, 25, 1)
-2021-11-03 14:00:01,289 - TensorRT - DEBUG - Running deconvolution with: 
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Registering layer: ConvTranspose_6 for ONNX node: ConvTranspose_6
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Original shape: (8, 16, 25, 1), squeezing to: (8, 16, 25)
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Registering tensor: 19 for ONNX tensor: 19
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - ConvTranspose_6 [ConvTranspose] outputs: [19 -> (8, 16, 25)[FLOAT]], 
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Parsing node: Relu_7 [Relu]
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Searching for input: 19
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Relu_7 [Relu] inputs: [19 -> (8, 16, 25)[FLOAT]], 
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Registering layer: Relu_7 for ONNX node: Relu_7
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Registering tensor: 20 for ONNX tensor: 20
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Relu_7 [Relu] outputs: [20 -> (8, 16, 25)[FLOAT]], 
+2021-11-03 14:38:32,622 - TensorRT - DEBUG - Parsing node: ConvTranspose_8 [ConvTranspose]
+2021-11-03 14:38:32,623 - TensorRT - DEBUG - Searching for input: 20
+2021-11-03 14:38:32,623 - TensorRT - DEBUG - Searching for input: decoder.2.weight
+2021-11-03 14:38:32,623 - TensorRT - DEBUG - Searching for input: decoder.2.bias
+2021-11-03 14:38:32,623 - TensorRT - DEBUG - ConvTranspose_8 [ConvTranspose] inputs: [20 -> (8, 16, 25)[FLOAT]], [decoder.2.weight -> (16, 32, 7)[FLOAT]], [decoder.2.bias -> (32)[FLOAT]], 
+2021-11-03 14:38:32,623 - TensorRT - DEBUG - Original shape: (8, 16, 25), unsqueezing to: (8, 16, 25, 1)
+2021-11-03 14:38:32,623 - TensorRT - DEBUG - Running deconvolution with: 
 Padding mode: NOTSET
 Pre-padding: (3, 0)
 Post-padding: (2, 0)
-2021-11-03 14:00:01,289 - TensorRT - DEBUG - Registering layer: ConvTranspose_8 for ONNX node: ConvTranspose_8
-2021-11-03 14:00:01,291 - TensorRT - ERROR - [network.cpp::setWeightsName::3013] Error Code 1: Internal Error (The given weights is not used in the network!)
-2021-11-03 14:00:01,291 - stderr - ERROR - Traceback (most recent call last):
+2021-11-03 14:38:32,623 - TensorRT - DEBUG - Registering layer: ConvTranspose_8 for ONNX node: ConvTranspose_8
+2021-11-03 14:38:32,625 - TensorRT - ERROR - [network.cpp::setWeightsName::3013] Error Code 1: Internal Error (The given weights is not used in the network!)
+2021-11-03 14:38:32,625 - stderr - ERROR - Traceback (most recent call last):
 
-2021-11-03 14:00:01,291 - stderr - ERROR -   File "main.py", line 152, in <module>
+2021-11-03 14:38:32,625 - stderr - ERROR -   File "main.py", line 228, in <module>
 
-2021-11-03 14:00:01,292 - stderr - ERROR -     
-2021-11-03 14:00:01,292 - stderr - ERROR - raise RuntimeError(
-2021-11-03 14:00:01,292 - stderr - ERROR - RuntimeError
-2021-11-03 14:00:01,292 - stderr - ERROR - : 
-2021-11-03 14:00:01,292 - stderr - ERROR - Network output shape (8, 32, 50, 1) not equal to expected output shape (8, 2, 100)
+2021-11-03 14:38:32,626 - stderr - ERROR -     
+2021-11-03 14:38:32,626 - stderr - ERROR - main(BATCH_SIZE, NUM_CHANNELS, FRAME_LENGTH)
+2021-11-03 14:38:32,626 - stderr - ERROR -   File "main.py", line 215, in main
+
+2021-11-03 14:38:32,626 - stderr - ERROR -     
+2021-11-03 14:38:32,626 - stderr - ERROR - engine = convert_to_trt(onnx_binary, input_shape)
+2021-11-03 14:38:32,627 - stderr - ERROR -   File "main.py", line 128, in convert_to_trt
+
+2021-11-03 14:38:32,627 - stderr - ERROR -     
+2021-11-03 14:38:32,627 - stderr - ERROR - raise RuntimeError(
+2021-11-03 14:38:32,627 - stderr - ERROR - RuntimeError
+2021-11-03 14:38:32,627 - stderr - ERROR - : 
+2021-11-03 14:38:32,627 - stderr - ERROR - Network output shape (8, 32, 50, 1) not equal to expected output shape (8, 2, 100)

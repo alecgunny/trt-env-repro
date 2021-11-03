@@ -1,6 +1,6 @@
 from contextlib import ExitStack
 from io import BytesIO
-from packaging import Version
+from packaging.version import Version
 from typing import Tuple
 
 import pycuda.driver as cuda
@@ -9,9 +9,7 @@ import tensorrt as trt
 import torch
 from pycuda import autoinit  # noqa
 
-from log_utils import TRTLogger, logger
-
-IS_8_OR_HIGHER = Version(trt.__version) >= Version("8.0")
+from log_utils import IS_8_OR_HIGHER, TRTLogger, logger
 
 
 class OneDConvolutionalAutoencoder(torch.nn.Module):
@@ -83,7 +81,9 @@ def build_onnx_network(
     return onnx_binary.getvalue(), y
 
 
-def convert_to_trt(onnx_binary: bytes, input_shape: Tuple[int, int, int]):
+def convert_to_trt(
+    onnx_binary: bytes, input_shape: Tuple[int, int, int]
+) -> trt.ICudaEngine:
     """Convert an ONNX binary to a TensorRT executable engine"""
     logger.info("Converting ONNX model to TensorRT")
     trt_logger = TRTLogger()
@@ -112,7 +112,7 @@ def convert_to_trt(onnx_binary: bytes, input_shape: Tuple[int, int, int]):
             )
         )
         parser = stack.enter_context(trt.OnnxParser(network, trt_logger))
-        parser.parse(onnx_binary.getvalue())
+        parser.parse(onnx_binary)
 
         # if none of the layers got marked as output,
         # mark the last one as the output manually
@@ -150,7 +150,7 @@ def convert_to_trt(onnx_binary: bytes, input_shape: Tuple[int, int, int]):
     return engine
 
 
-def do_inference(engine, input: np.ndarray) -> np.ndarray:
+def do_inference(engine: trt.ICudaEngine, input: np.ndarray) -> np.ndarray:
     """Use a TensorRT engine to perform inference on a test input"""
     with engine, engine.create_execution_context() as context:
         stream = cuda.Stream()

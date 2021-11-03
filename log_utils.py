@@ -1,6 +1,7 @@
 import logging
 import platform
 import sys
+from packaging.version import Version
 
 import tensorrt as trt
 
@@ -17,6 +18,8 @@ logger = logging.getLogger()
 logger.debug("TensorRT version: " + trt_version)
 logger.debug("Python version: " + sys.version)
 logger.debug("Platform: " + platform.platform())
+
+IS_8_OR_HIGHER = Version(trt_version) >= Version("8.0")
 
 
 class TRTLogger(trt.ILogger):
