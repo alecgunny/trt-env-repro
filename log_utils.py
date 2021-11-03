@@ -26,8 +26,6 @@ class TRTLogger(trt.ILogger):
     """Custom TRT logging class for outputting to log file"""
 
     def __init__(self):
-        if IS_8_OR_HIGHER:
-            super().__init__()
         self.logger = logging.getLogger("TensorRT")
 
     def log(self, severity, msg):

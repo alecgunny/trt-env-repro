@@ -1,8 +1,6 @@
 from contextlib import ExitStack
 from io import BytesIO
-from packaging.version import Version
 from typing import Tuple
-from wurlitzer import sys_pipes
 
 import pycuda.driver as cuda
 import numpy as np
@@ -87,6 +85,11 @@ def convert_to_trt(
 ) -> trt.ICudaEngine:
     """Convert an ONNX binary to a TensorRT executable engine"""
     logger.info("Converting ONNX model to TensorRT")
+
+    # for newer versions of TensorRT, we can use
+    # our custom logger. Otherwise use the old
+    # one and make sure you redirect stdout
+    # on the command line
     if IS_8_OR_HIGHER:
         trt_logger = TRTLogger()
     else:
@@ -156,6 +159,7 @@ def convert_to_trt(
 
 def do_inference(engine: trt.ICudaEngine, input: np.ndarray) -> np.ndarray:
     """Use a TensorRT engine to perform inference on a test input"""
+    logger.info("Executing inference using TensorRT engine")
     with engine, engine.create_execution_context() as context:
         stream = cuda.Stream()
         host_mems, device_mems, bindings = [], [], []
@@ -173,8 +177,6 @@ def do_inference(engine: trt.ICudaEngine, input: np.ndarray) -> np.ndarray:
             host_mems.append(host_mem)
             device_mems.append(device_mem)
             bindings.append(int(device_mem))
-
-        logger.info("Executing inference using TensorRT engine")
 
         # copy the input data to the input host memory buffer
         np.copyto(host_mems[0], input)
@@ -201,26 +203,24 @@ def main(
     frame_length: int
 ) -> None:
     input_shape = (batch_size, num_channels, frame_length)
-    
+
     # build a dummy input then build a network
     # using it. Get a target output to compare
     # against TensorRT's output
     x = torch.randn(input_shape).cuda()
     onnx_binary, y = build_onnx_network(x)
-    
+
     # move these torch tensors to the numpy
     # on the CPU and flatten them for use
     # with TensorRT memory buffers
     x = x.detach().cpu().numpy().ravel()
     y = y.detach().cpu().numpy().ravel()
-    
+
     # build a TensorRT engine and do some inference
     # on our dummy input using it
     engine = convert_to_trt(onnx_binary, input_shape)
-
-    logger.info("Engine built, performing inference")
     y_trt = do_inference(engine, x)
-    
+
     # make sure that TensorRT's answer is pretty
     # close to Torch's answer
     err = np.abs(y_trt - y) / y
