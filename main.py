@@ -11,13 +11,17 @@ import torch
 from pycuda import autoinit
 
 
+trt_version = trt.__version__
 logging.basicConfig(
-    filename="log.txt",
+    filename=f"log-{trt_version}.txt",
     filemode="w",
     level=logging.DEBUG,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
-logging.debug("TensorRT version: " + trt.__version__)
+
+logging.debug("TensorRT version: " + trt_version)
+logging.debug("System info: " + sys.platform)
+
 
 class TRTLogger(trt.ILogger):
     def __init__(self):
