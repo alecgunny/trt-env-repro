@@ -2,10 +2,7 @@ name: deploy
 
 on:
   push:
-    branches: main
-
-env:
-  TRT_TAG: "21.10"
+    branches: 8.2
 
 jobs:
   main:
@@ -36,5 +33,3 @@ jobs:
         file: Dockerfile
         push: true
         tags: fastml/gw-iaas-export:latest
-        build-args: |
-          TRT_TAG=${{ env.TRT_TAG }}
